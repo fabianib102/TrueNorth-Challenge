@@ -7,7 +7,6 @@ export default class ApiService {
   }
 
   get = (endpoint)=>{
-    console.log(`the endpoint ${endpoint}`);
     const test = this.client.get(endpoint);
     return test;
   }

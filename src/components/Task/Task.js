@@ -1,16 +1,36 @@
-import React from "react";
-import { Card, Button } from "react-bootstrap";
+import React, { useState } from "react";
+import { Card, Modal, Button } from "react-bootstrap";
 
-function Task() {
+function Task({ data }) {
+  const [showValue, setShowValue] = useState(false);
+  const handleClose = () => setShowValue(false);
+  const handleShow = () => setShowValue(true);
+
   return (
-    <Card>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>Some quick example text to build on the card title and make up the bulk of the card's content.</Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card>
+    <>
+      <Card bg={"info"} onClick={handleShow}>
+        <Card.Header>Task #{data.UUID}</Card.Header>
+        <Card.Body>
+          <Card.Title>{data.title}</Card.Title>
+        </Card.Body>
+      </Card>
+
+      <Modal show={showValue}>
+        <Modal.Header>
+          <Modal.Title>
+            Task #{data.UUID} - {data.title}
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Complete
+          </Button>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
   );
 }
 

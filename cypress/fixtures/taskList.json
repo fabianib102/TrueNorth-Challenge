@@ -1,0 +1,17 @@
+[
+  {
+    "UUID": "1234",
+    "title": "The Title",
+    "state": false
+  },
+  {
+    "UUID": "1235",
+    "title": "The Title 2",
+    "state": true
+  },
+  {
+    "UUID": "1236",
+    "title": "The Title 3",
+    "state": false
+  }
+]

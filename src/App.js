@@ -3,28 +3,36 @@ import { Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ListTask from "./components/ListTask/ListTask";
 import TaskService from "./services/TaskService";
-import { useState, useEffect } from "react";
-import axios from "axios";
+// import React, { useState, useEffect } from "react";
 
 const taskService = new TaskService();
 
 function App() {
 
-  const [ listTask, setListTask ] = useState([]);
+  const test = [
+    {
+      "UUID": "1234",
+      "title": "The Title",
+      "state": false
+    },
+    {
+      "UUID": "1235",
+      "title": "The Title 2",
+      "state": true
+    },
+    {
+      "UUID": "1236",
+      "title": "The Title 3",
+      "state": false
+    }
+  ]
 
-  useEffect(() => {
-    //getTasks();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    axios
-      .get('https://lorem-faker.vercel.app/api?quantity=3')
-      .then( res => {
-        console.log(res)
-      })
-      .catch( err => {
-        console.log(err)
-      })
+  //const [ listTask, setListTask ] = useState([]);
 
-  }, []);
+  // useEffect(() => {
+  //   getTasks();
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   // const getTasks = async () => {
   //   try {
@@ -41,7 +49,7 @@ function App() {
 
   return (
     <Container>
-      <ListTask listTask={listTask}/>
+      <ListTask listTask={test}/>
     </Container>
   );
 }

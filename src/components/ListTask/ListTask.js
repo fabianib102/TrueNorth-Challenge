@@ -7,8 +7,8 @@ function ListTask({ listTask }) {
     <Row>
       {listTask.map((e, i) => {
         return (
-          <Col key={i}>
-            <Task />
+          <Col key={i} xs={12} lg={4}>
+            <Task data={e} />
           </Col>
         );
       })}
