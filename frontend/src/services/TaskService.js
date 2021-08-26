@@ -9,7 +9,7 @@ export default class TaskService {
   apiService = new ApiService(this.header);
 
   getTasks = () => {
-    return this.apiService.get(`${process.env.REACT_APP_BASE_URL}`);
+    return this.apiService.get(`${process.env.REACT_APP_BASE_URL}/tasks`);
   };
 
 }

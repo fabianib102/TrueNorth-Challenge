@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Card, Modal, Button } from "react-bootstrap";
+import './Task.scss';
 
 function Task({ data }) {
   const [showValue, setShowValue] = useState(false);
@@ -8,8 +9,8 @@ function Task({ data }) {
 
   return (
     <>
-      <Card bg={"info"} onClick={handleShow}>
-        <Card.Header>Task #{data.UUID}</Card.Header>
+      <Card bg={"info"} onClick={handleShow} className="task-card">
+        <Card.Header>Task #{data.UUID} <small>11 mins ago</small></Card.Header>
         <Card.Body>
           <Card.Title>{data.title}</Card.Title>
         </Card.Body>
