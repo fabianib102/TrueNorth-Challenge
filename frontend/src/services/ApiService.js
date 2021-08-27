@@ -7,7 +7,10 @@ export default class ApiService {
   }
 
   get = (endpoint)=>{
-    const test = this.client.get(endpoint);
-    return test;
+    return this.client.get(endpoint);
   }
+
+  update = (endpoint) => {
+    return this.client.put(endpoint);
+  };
 }

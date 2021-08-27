@@ -20,13 +20,11 @@ function App() {
     try {
       const res = await taskService.getTasks();
       if (res.data) {
-        console.log(res.data);
         setListTask(res.data);
       }
     } catch (err) {
       console.log("The error in fetch component: ", err);
     }
-    console.log(listTask);
   };
 
   return (
