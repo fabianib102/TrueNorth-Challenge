@@ -1,15 +1,17 @@
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ListTask from "./components/ListTask/ListTask";
 import TaskService from "./services/TaskService";
-import React, { useState, useEffect } from "react";
+import ModalTask from "./components/ModalTask/ModalTask";
 
 const taskService = new TaskService();
 
 function App() {
-
-  const [ listTask, setListTask ] = useState([]);
+  const [listTask, setListTask] = useState([]);
+  const [showValue, setShowValueModal] = useState(false);
+  const [dataTask, setDataTask] = useState({});
 
   useEffect(() => {
     getTasks();
@@ -29,7 +31,13 @@ function App() {
 
   return (
     <Container>
-      <ListTask listTask={listTask}/>
+      <ListTask listTask={listTask} setShowValueModal={setShowValueModal} setDataTask={setDataTask} />
+      <ModalTask
+        showValue={showValue}
+        dataTask={dataTask}
+        setShowValueModal={setShowValueModal}
+        listTask={listTask}
+      />
     </Container>
   );
 }
