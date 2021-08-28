@@ -8,7 +8,7 @@ After cloning the project, the first point is run `npm install` command, then yo
 
 ## Frontend prject
 
-On the other hand, you have to move into the `frontend` folder and install all dependencies with the `npm install` command related to the react project. Finally, run the `npm run start` command and then go to the following link: http://localhost:3000/.
+On the other hand, you have to move into the `frontend` folder and install all dependencies with the `npm install` command related to the react project. Finally, run the `npm run start` command and then go to the following link: http://localhost:3000/. In order to verify component tests run `npm run test-cypress` command.
 
 Is important to mention that you must have running the project in two different terminals.
 
