@@ -16,7 +16,7 @@ describe("Testing ModalTask component should", () => {
   });
 
   it("Contain a custom title", () => {
-    cy.contains("Task #1 - The Title");
+    cy.get('.modal-title').contains("Task #1 - The Title");
   });
 
   it("Contain 'Complete' and Close buttons", () => {

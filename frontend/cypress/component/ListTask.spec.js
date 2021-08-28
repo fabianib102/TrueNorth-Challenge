@@ -5,10 +5,16 @@ import ListTask from '../../src/components/ListTask/ListTask';
 import dataList from '../fixtures/taskList.json';
 
 describe('Testing ListTask component should', () => {
+  const setShowValueModalStub = () => {};
+  const setDataTaskStub = () => {};
 
   const Sut = () => {
     return (
-      <ListTask listTask={dataList} />
+      <ListTask
+        listTask={dataList}
+        setShowValueModal={setShowValueModalStub}
+        setDataTask={setDataTaskStub}
+      />
     );
   };
 
@@ -17,7 +23,7 @@ describe('Testing ListTask component should', () => {
   });
 
   it('Contain a custom title', () => {
-    cy.contains('Task #1234');
+    cy.contains('Task #1');
   });
 
   it('Contain at least 3 card', () => {
