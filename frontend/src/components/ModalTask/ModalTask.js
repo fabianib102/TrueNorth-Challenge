@@ -12,7 +12,7 @@ function ModalTask({ showValue, dataTask, setShowValueModal, listTask }) {
   const handleComplete = async () => {
     try {
       dataTask.state = true;
-      const indexTask = listTask.findIndex((e) => e.UUID == dataTask.UUID);
+      const indexTask = listTask.findIndex((e) => e.UUID === dataTask.UUID);
       listTask[indexTask] = dataTask;
       await taskService.updateTask(dataTask.UUID);
       setShowValueModal(false);
@@ -29,10 +29,10 @@ function ModalTask({ showValue, dataTask, setShowValueModal, listTask }) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Footer>
-        <Button variant="secondary" onClick={handleComplete}>
+        <Button variant="secondary" className="btnComplete" onClick={handleComplete}>
           Complete
         </Button>
-        <Button variant="secondary" onClick={handleClose}>
+        <Button variant="secondary" className="btnClose" onClick={handleClose}>
           Close
         </Button>
       </Modal.Footer>

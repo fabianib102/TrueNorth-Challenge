@@ -1,16 +1,16 @@
 [
   {
-    "UUID": "1234",
+    "UUID": "1",
     "title": "The Title",
     "state": false
   },
   {
-    "UUID": "1235",
+    "UUID": "2",
     "title": "The Title 2",
     "state": true
   },
   {
-    "UUID": "1236",
+    "UUID": "3",
     "title": "The Title 3",
     "state": false
   }

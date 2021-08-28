@@ -20,8 +20,4 @@ describe('Testing Task component should', () => {
   it('Contain a custom title called "Task #"', () => {
     cy.contains('Task #');
   });
-
-  it('Not render any modal by default', () => {
-    cy.get('.modal').should('not.exist');
-  });
 })
