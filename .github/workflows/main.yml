@@ -14,5 +14,5 @@ jobs:
         env: 
           ENV_POSTGRES_DB_URL: ${{ secrets.TEST_ENV_PARA_VER }}
         run: |
-          npm install -g pnpm
+          npm uninstall -g pnpm
           echo POSTGRES_DB_URL=$ENV_POSTGRES_DB_URL
