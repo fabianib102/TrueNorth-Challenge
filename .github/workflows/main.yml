@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Run flyway migration
         env: 
-          ENV_POSTGRES_DB_URL: ${{ secrets.POSTGRES_DB_URL_STAGING }}
+          ENV_POSTGRES_DB_URL: ${{ secrets.TEST_ENV_PARA_VER }}
         run: |
           npm install -g pnpm
           echo POSTGRES_DB_URL=$ENV_POSTGRES_DB_URL
