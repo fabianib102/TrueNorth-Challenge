@@ -1,0 +1,18 @@
+name: Run flyway migration
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  run_flyway_migration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run flyway migration
+        env: 
+          ENV_POSTGRES_DB_URL: ${{ secrets.POSTGRES_DB_URL_STAGING }}
+        run: |
+          npm install -g pnpm
+          echo POSTGRES_DB_URL=$ENV_POSTGRES_DB_URL
